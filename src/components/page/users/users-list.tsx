@@ -39,9 +39,9 @@ const UsersList = () => {
           <React.Fragment key={index}>
             {page.users.map((user, j) => (
               <motion.li
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.25, delay: j * 0.2 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.25, delay: j * 0.1 }}
                 exit={{ opacity: 0, y: -50 }}
                 key={user.id}
                 className="border rounded-lg p-4 border-border flex gap-2 justify-between items-center"

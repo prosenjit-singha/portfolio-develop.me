@@ -1,5 +1,6 @@
 'use client'
 
+import configs from '@/configs'
 import { SignalRContext, SignalRContextType } from '../context/signalr'
 import * as signalR from '@microsoft/signalr'
 import React from 'react'
@@ -10,10 +11,8 @@ function SignalRProvider({ children }: { children: React.ReactNode }) {
   const connection = React.useRef<signalR.HubConnection | null>(null)
 
   React.useEffect(() => {
-    const HUB_URL = 'https://tech-test.raintor.com/Hub'
-
     connection.current = new signalR.HubConnectionBuilder()
-      .withUrl(HUB_URL)
+      .withUrl(configs.signalR.url)
       .withAutomaticReconnect()
       .build()
     if (
