@@ -39,7 +39,7 @@ const HomePageWorkingHistorySection = () => {
           </span>
         </h2>
         {/* Sub Heading */}
-        <p className="text-[1.125rem] max-w-[900px] text-center mx-auto mt-8">
+        <p className="text-[1.125rem] max-w-[900px] text-center mx-auto mt-8 mb-8">
           We start every new client interaction with an in-depth discovery call where we get to know
           each other and recommend the best course of action.
         </p>
