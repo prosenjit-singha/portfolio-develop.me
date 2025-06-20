@@ -42,7 +42,7 @@ const UsersList = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.25, delay: j * 0.1 }}
-                exit={{ opacity: 0, y: -50 }}
+                exit={{ opacity: 0 }}
                 key={user.id}
                 className="border rounded-lg p-4 border-border flex gap-2 justify-between items-center"
               >
