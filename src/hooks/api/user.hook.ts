@@ -1,25 +1,24 @@
 import { IUsersApiResponse } from '@/interfaces/user.interface'
 import { InfiniteData, useInfiniteQuery } from '@tanstack/react-query'
-import configs from '@/configs'
 
-export const useInfinityUserList = () => {
+export const useInfinityUserList = (host: 'faker' | 'tech-test.raintor.com') => {
   //   const queryClient = useQueryClient()
   const fetchUsers = async ({ skip = 0, take = 10 }: { skip: number; take: number }) => {
     const res = await fetch(
       `https://tech-test.raintor.com/user/GetUsersList?take=${take}&skip=${skip}`
     )
     if (!res.ok) {
-      throw res.json()
+      throw await res.json()
     }
-    return res.json()
+    return await res.json()
   }
 
   const fetchFakeUsers = async ({ skip = 0, take = 10 }: { skip: number; take: number }) => {
     const res = await fetch(`/api/fake-users?take=${take}&skip=${skip}`)
     if (!res.ok) {
-      throw res.json()
+      throw await res.json()
     }
-    return res.json()
+    return await res.json()
   }
 
   return useInfiniteQuery<
@@ -29,9 +28,9 @@ export const useInfinityUserList = () => {
     unknown[],
     { skip: number; take: number }
   >({
-    queryKey: ['users'],
+    queryKey: ['users', host],
     queryFn: ({ pageParam }) =>
-      configs.useFakeUsers ? fetchFakeUsers(pageParam) : fetchUsers(pageParam),
+      host === 'faker' ? fetchFakeUsers(pageParam) : fetchUsers(pageParam),
     initialPageParam: { skip: 0, take: 10 },
     getNextPageParam: (lastPage, pages) => {
       const nextSkip = pages.length * 10

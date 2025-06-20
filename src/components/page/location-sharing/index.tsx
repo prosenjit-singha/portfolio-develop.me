@@ -17,7 +17,7 @@ const LocationSharingPage = () => {
   const [location, setLocation] = React.useState<Location | null>(null)
   return (
     <main>
-      <section className="mx-mw flex flex-col items-center gap-y-10 p-8">
+      <section className="mx-mw flex flex-col items-center gap-y-10 space-px">
         <div className="w-full max-w-[600px] flex flex-col">
           <h3 className="mb-2 text-center font-bold">User 1</h3>
           <SendLocationForm className="w-full" />
@@ -30,7 +30,7 @@ const LocationSharingPage = () => {
         </div>
       </section>
 
-      <section className="mx-mw flex flex-col p-8">
+      <section className="mx-mw flex flex-col my-8">
         <h3 className="mb-2 heading-1 text-center font-bold">Users List</h3>
         <p className="text-center heading-2">You can see this user list location on map</p>
         <UsersList />

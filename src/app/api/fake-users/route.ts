@@ -1,11 +1,11 @@
 import { faker } from '@faker-js/faker'
 import { NextRequest, NextResponse } from 'next/server'
-import { wait } from '@/libs/utils'
+// import { wait } from '@/libs/utils'
 
 const TOTAL_USERS = 250
 
 export async function GET(req: NextRequest) {
-  await wait(2000)
+  // await wait(2000)
   const { searchParams } = new URL(req.url)
   const take = parseInt(searchParams.get('take') || '10')
   const skip = parseInt(searchParams.get('skip') || '0')
