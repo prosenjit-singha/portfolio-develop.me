@@ -12,9 +12,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sporting-regular);
   --font-mono: var(--font-geist-mono);
-  --color-primary: #1daf57;
+  --color-primary: #c5ff41;
   --color-primary-foreground: #e2e2e2;
   --color-muted-foreground: #00000083;
+  --color-border: rgba(0, 0, 0, 0.08);
 }
 
 @layer utilities {
@@ -30,9 +31,10 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --color-primary: #1daf57;
+    --color-primary: #c5ff41;
     --color-primary-foreground: #e2e2e2;
     --color-muted-foreground: #ffffff88;
+    --color-border: rgba(255, 255, 255, 0.08);
   }
 }
 

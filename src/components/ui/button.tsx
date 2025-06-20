@@ -3,12 +3,13 @@ import { cn } from '@/libs/utils'
 import { LucideIcon } from 'lucide-react'
 import Link from 'next/link'
 
-type CommonProps<T extends React.ElementType> = {
+type CommonProps<T extends React.ElementType> = React.ComponentProps<T> & {
   startIcon?: LucideIcon
   as?: T | typeof Link
+  size?: 'small' | 'default' | 'large'
 }
 
-type ButtonProps<T extends React.ElementType = 'button'> = CommonProps<T> & React.ComponentProps<T>
+type ButtonProps<T extends React.ElementType = 'button'> = React.ComponentProps<T> & CommonProps<T>
 
 export const Button = <T extends React.ElementType = 'button'>({
   className,
@@ -19,6 +20,12 @@ export const Button = <T extends React.ElementType = 'button'>({
 }: ButtonProps<T>) => {
   const Icon = startIcon
 
+  const sizeClasses = {
+    small: '',
+    default: '',
+    large: '',
+  }
+
   const Wrapper = as
 
   return (
@@ -26,6 +33,7 @@ export const Button = <T extends React.ElementType = 'button'>({
       {...props}
       className={cn(
         'flex items-center border rounded-full py-2 hover:cursor-pointer hover:border-primary/50 hover:text-primary transition-colors',
+        sizeClasses[props.size],
         className
       )}
     >
@@ -55,9 +63,9 @@ export const IconButton = <T extends React.ElementType = 'button'>({
   const Wrapper = as || 'button'
 
   const sizeClasses = {
-    small: 'w-8 h-8',
-    default: 'w-10 h-10',
-    large: 'w-15 h-15',
+    small: 'py-1',
+    default: '',
+    large: '',
   }
 
   return (

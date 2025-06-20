@@ -65,7 +65,7 @@ const HomePageHeroSection = () => {
                 </Link>
               ))}
             </div>
-          </div>{' '}
+          </div>
           {/* Subtitle & CTA */}
           <div className="max-w-3xl flex flex-col gap-8">
             <p>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import { sportingGrotesque } from '@/helpers/fonts.helper'
 import PageHeader from '@/components/layout/navbar'
+import FooterSection from '@/components/layout/footer'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className={`${sportingGrotesque.className} antialiased`}>
         <PageHeader />
         {children}
+        <FooterSection />
       </body>
     </html>
   )
