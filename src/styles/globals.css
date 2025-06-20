@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-
+/* @import 'tw-animate-css'; */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* light theme */
@@ -11,13 +11,18 @@
   --primary: #c5ff41;
   --primary-foreground: #e2e2e2;
   --muted-foreground: #ffffff88;
-  --border: rgba(0, 0, 0, 0.08);
+  --border: oklch(0.92 0.004 286.32);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
 }
 
 .dark {
   --background: #000000;
   --foreground: #ededed;
   --border: rgba(255, 255, 255, 0.08);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
 }
 
 @theme inline {
@@ -29,6 +34,8 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
 }
 
 @layer utilities {

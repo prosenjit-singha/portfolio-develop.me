@@ -63,7 +63,7 @@ export const IconButton = <T extends React.ElementType = 'button'>({
   const Wrapper = as || 'button'
 
   const sizeClasses = {
-    small: 'py-1',
+    small: 'size-[32px] p-1.5',
     default: 'size-[42px]',
     large: 'size-[52px]',
   }
