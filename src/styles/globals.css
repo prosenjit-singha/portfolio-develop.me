@@ -61,7 +61,7 @@
     @apply text-[clamp(20px,5vw,58px)] font-bold;
   }
   .heading-2 {
-    @apply text-[clamp(16px,5vw,30px)];
+    @apply text-[clamp(14px,5vw,28px)];
   }
 }
 

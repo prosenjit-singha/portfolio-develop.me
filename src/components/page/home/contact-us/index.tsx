@@ -14,7 +14,7 @@ const ContactUsSection = () => {
         height={1000}
         className="absolute 1bottom-20 left-0 w-full h-svh -z-10"
       />
-      <div className="flex gap-8 lg:justify-between">
+      <div className="flex flex-col lg:flex-row gap-8 lg:justify-between">
         <div>
           <div className="flex items-stretch">
             <div className="border rounded-full self-stretch aspect-square w-10 flex items-center justify-center">
@@ -25,11 +25,11 @@ const ContactUsSection = () => {
             </div>
           </div>
           {/* Heading */}
-          <h3 className="lg:col-span-12 max-w-[770px] text-[70px] font-bold flex flex-wrap gap-x-4">
+          <h3 className="lg:col-span-12 max-w-[770px] heading-1 font-bold flex flex-wrap gap-x-4 my-4 lg:my-0">
             <span className=" flex gap-4 items-start ">Interested in</span>
-            <span className="relative flex mb-4 px-4 text-white dark:text-black ">
+            <span className="relative flex lg:mb-4 px-4 text-white dark:text-black ">
               work
-              <span className="absolute top-0 left-0 h-[calc(100%-10px)] w-full z-[-10] bg-black  dark:bg-white rounded-lg" />
+              <span className="absolute top-0 left-0 h-full lg:h-[calc(100%-10px)] w-full z-[-10] bg-black  dark:bg-white rounded-lg" />
             </span>
             together?
           </h3>

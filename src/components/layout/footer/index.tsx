@@ -5,15 +5,15 @@ import Link from 'next/link'
 
 const FooterSection = () => {
   return (
-    <footer className="mx-mw px-8 pb-8 relative">
+    <footer className="mx-mw space-px pb-3 lg:pb-8 xl:pb-10 relative">
       <div className="bold-section flex flex-col gap-5">
-        <div className="flex justify-between">
+        <div className="flex flex-col lg:flex-row justify-between">
           <BrandLogo className="text-primary text-[34px] h-fit" />
 
           <div className="flex flex-col lg:w-[50%]">
-            <h2 className="text-[64px] font-bold">As You Can</h2>
+            <h2 className="heading-1 my-4 lg:my-0 font-bold">As You Can</h2>
 
-            <div className="flex gap-8 lg:my-12">
+            <div className="flex flex-col lg:flex-row gap-8 lg:my-12">
               <div className="flex flex-col">
                 <FooterNavLinkBlock
                   title="Say hello"
@@ -98,7 +98,7 @@ const FooterSection = () => {
         </div>
 
         {/* Copyright */}
-        <div className="flex gap-2 justify-between items-center">
+        <div className="flex flex-col mt-4 lg:mt-0 lg:flex-row gap-2 justify-between items-center">
           <p className="font-bold text-[24px]">BESNIK</p>
 
           <p className="text-white/50 dark:text-black/50">© devlop.me 2022</p>

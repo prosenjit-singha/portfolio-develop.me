@@ -29,7 +29,7 @@ const MY_WORK_PROCESS = [
 
 const HomePageWorkProcess = () => {
   return (
-    <section className="mx-mw px-8">
+    <section className="mx-mw space-px">
       <div className="bold-section">
         <div className="relative mb-8">
           <div className="flex items-stretch lg:absolute lg:top-[25%] lg:left-0">
@@ -37,10 +37,10 @@ const HomePageWorkProcess = () => {
               <ArrowDownIcon />
             </div>
             <div className="border px-3 py-2 rounded-full">
-              <h3 className="leading-[1.10em] mt-1">Work Process</h3>
+              <h3 className="leading-[1.10em] mt-1 ">Work Process</h3>
             </div>
           </div>
-          <h2 className="text-[58px] font-bold text-center">My Work Process</h2>
+          <h2 className="heading-1 font-bold text-center mt-8 lg:mt-0">My Work Process</h2>
         </div>
 
         <ul className="grid lg:grid-cols-2 gap-8">

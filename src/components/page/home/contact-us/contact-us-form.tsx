@@ -36,7 +36,7 @@ const ContactUsForm = ({ className, ...props }: ContactUsFormProps) => {
       <Textarea placeholder="Describe your project" rows={1} />
 
       <div className="flex gap-4 my-4">
-        <Button type="submit" startIcon={SendIcon} className="w-fit" size="small">
+        <Button type="submit" startIcon={SendIcon} className="w-fit">
           Send
         </Button>
         <Button startIcon={MailIcon} className="w-fit">

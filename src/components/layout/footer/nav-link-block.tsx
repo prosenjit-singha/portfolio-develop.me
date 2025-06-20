@@ -28,7 +28,7 @@ const FooterNavLinkBlock = ({ title, links, ...props }: FooterNavLinkBlockProps)
             <li key={link.href}>
               <Link
                 href={url}
-                className="uppercase font-normal hover:text-primary transition-colors"
+                className="uppercase font-normal hover:text-primary transition-colors text-sm"
               >
                 {link.text}
               </Link>
