@@ -4,6 +4,7 @@ import configs from '@/configs'
 import { SignalRContext, SignalRContextType } from '../context/signalr'
 import * as signalR from '@microsoft/signalr'
 import React from 'react'
+import { toast } from 'react-toastify'
 
 function SignalRProvider({ children }: { children: React.ReactNode }) {
   const [status, setStatus] = React.useState<SignalRContextType['status']>('disconnected')
@@ -52,9 +53,11 @@ function SignalRProvider({ children }: { children: React.ReactNode }) {
     connection.current
       ?.invoke('SendLatLon', data.lat, data.lon, data.userName)
       .then(result => {
+        toast.success('Location Information Sent!')
         console.log('✅ SignalR Invoke: SendLatLon success', result)
       })
       .catch(error => {
+        toast.error('Failed to send location information!')
         console.error('❌ SignalR Invoke: SendLatLon failed', error)
       })
   }
