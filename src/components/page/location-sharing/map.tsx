@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -35,8 +35,13 @@ const MapMover = ({ location }: { location: Location | null }) => {
   return null
 }
 
-const ViewLocationOnMap = () => {
-  const [location, setLocation] = useState<Location | null>(null)
+const ViewLocationOnMap = ({
+  location,
+  setLocation,
+}: {
+  location: Location | null
+  setLocation: (location: Location) => void
+}) => {
   const { connection } = useSignalR()
   const { theme } = useTheme()
 

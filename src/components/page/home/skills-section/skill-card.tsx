@@ -19,7 +19,7 @@ const SkillCard = <T extends React.ElementType = 'div'>({
   return (
     <Wrapper
       className={cn(
-        'rounded-[30px] p-6 flex flex-col gap-4 bg-white/7 max-w-[26.875rem] hover:shadow-primary/10 shadow-xl border dark:border-black/8 border-white/8  hover:border-primary/30 transition-[border-color,box-shadow,rotate] hover:rotate-0',
+        'rounded-[30px] p-6 flex flex-col gap-4 bg-zinc-900 dark:bg-white max-w-[26.875rem] hover:shadow-primary/10 shadow-xl border dark:border-black/8 border-white/8  hover:border-primary/30 transition-[border-color,box-shadow,rotate] hover:rotate-0',
         className
       )}
       {...props}

@@ -6,7 +6,7 @@ import ContactUsForm from './contact-us-form'
 
 const ContactUsSection = () => {
   return (
-    <section className="mx-mw px-8 relative my-12">
+    <section className="mx-mw space-px relative my-12">
       <Image
         src="/assets/images/neon-bg-3.png"
         alt="Neon Background"

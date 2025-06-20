@@ -32,13 +32,13 @@ export const Button = <T extends React.ElementType = 'button'>({
     <Wrapper
       {...props}
       className={cn(
-        'flex items-center border rounded-full py-1 lg:py-2 hover:cursor-pointer hover:border-primary/50 hover:text-primary transition-colors text-xs',
+        'group flex items-center border rounded-full py-1 lg:py-2 hover:cursor-pointer  transition-all text-xs lg:text-sm hover:bg-primary hover:text-primary-foreground hover:shadow-primary/40 shadow-lg shadow-transparent hover:scale-105 active:scale-95',
         // sizeClasses[size],
         className
       )}
     >
       {Icon && (
-        <span className="border rounded-full p-1 lg:h-9.5 lg:w-9.5 flex justify-center items-center">
+        <span className="group-hover:-rotate-45 transition-transform duration-300 border rounded-full p-1 lg:h-9.5 lg:w-9.5 flex justify-center items-center">
           {<Icon size={20} />}
         </span>
       )}
@@ -72,7 +72,7 @@ export const IconButton = <T extends React.ElementType = 'button'>({
     <Wrapper
       {...props}
       className={cn(
-        'aspect-square flex items-center justify-center border rounded-full hover:cursor-pointer hover:border-primary/50 hover:text-primary transition-colors',
+        'aspect-square flex items-center justify-center border rounded-full hover:cursor-pointer hover:bg-primary  transition-all hover:shadow-primary/40 shadow-lg shadow-transparent hover:scale-105 active:scale-95 hover:text-black hover:border-black hover:-rotate-45',
         sizeClasses[size],
         className
       )}

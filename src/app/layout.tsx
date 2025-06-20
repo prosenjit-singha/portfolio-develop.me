@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${sportingGrotesque.className} antialiased`}>
+      <body className={`${sportingGrotesque.className} antialiased smooth-wrapper`}>
         <Providers>
           <PageHeader />
           {children}

@@ -13,7 +13,7 @@ const MY_WORK_PROCESS = [
     desc: "Every end-to-end project of ours begins with a tEspoke pre-build strategy. From brand ID consultation to in-depth ccxle reviews we're here to set the stage for success.",
     readMoreHref: '/',
     className:
-      'rotate-[3.85deg] bg-[#C5FF41] [&>div>h5]:bg-black [&>div>h5]:text-white dark:[&>div>h5]:bg-white dark:[&>div>h5]:text-black [&>p]:text-black/70 dark:[&>p]:text-white/70 [&>div>a]:text-black',
+      'rotate-[3.85deg] bg-[#C5FF41] [&>div>h5]:bg-black [&>div>h5]:text-white dark:[&>div>h5]:bg-white dark:[&>div>h5]:text-black [&>p]:text-black/70 dark:[&>p]:text-black/70 [&>div>a]:text-black',
   },
   {
     name: 'Design',

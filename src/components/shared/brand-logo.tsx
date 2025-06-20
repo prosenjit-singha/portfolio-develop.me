@@ -6,7 +6,15 @@ import { cn } from '@/libs/utils'
 
 const BrandLogo = ({ className, ...props }: Omit<React.ComponentProps<typeof Link>, 'href'>) => {
   return (
-    <Link className={cn(bwGradualBold.className, 'uppercase', className)} {...props} href={'/'}>
+    <Link
+      className={cn(
+        bwGradualBold.className,
+        'uppercase hover:text-primary transition-colors',
+        className
+      )}
+      {...props}
+      href={'/'}
+    >
       devlop.me
     </Link>
   )

@@ -3,8 +3,6 @@ import React from 'react'
 import { useInfinityUserList } from '@/hooks/api/user.hook'
 import { Skeleton } from '@/components/ui/skeleton'
 import Image from 'next/image'
-import { IconButton } from '@/components/ui/button'
-import { MapPinIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 
 const SIZE = 10
@@ -62,11 +60,21 @@ const UsersList = () => {
                   </div>
                 </div>
 
-                <div>
-                  <IconButton aria-label="See Location On Map" size="small">
+                {/* <div>
+                  <IconButton
+                    aria-label="See Location On Map"
+                    size="small"
+                    onClick={() =>
+                      setLocation?.({
+                        lat: Number(user.location.lat),
+                        lon: Number(user.location.lon),
+                        userName: user.email,
+                      })
+                    }
+                  >
                     <MapPinIcon />
                   </IconButton>
-                </div>
+                </div> */}
               </motion.li>
             ))}
           </React.Fragment>
