@@ -1,18 +1,19 @@
 import BrandLogo from '@/components/shared/brand-logo'
 import React from 'react'
 import FooterNavLinkBlock from './nav-link-block'
+import Link from 'next/link'
 
 const FooterSection = () => {
   return (
-    <footer className="mx-mw px-8 relative mt-12 ">
+    <footer className="mx-mw px-8 pb-8 relative mt-12 ">
       <div className="bg-black dark:bg-white p-8 rounded-[52px] text-white dark:text-black flex flex-col gap-5">
-        <div>
+        <div className="flex justify-between">
           <BrandLogo className="text-primary text-[34px]" />
 
-          <div className="flex gap-8 lg:gap-10 xl:gap-12">
+          <div className="flex flex-col lg:w-[50%]">
             <h2 className="text-[64px] font-bold">As You Can</h2>
 
-            <div className="flex gap-8">
+            <div className="flex gap-8 lg:my-12">
               <div className="flex flex-col">
                 <FooterNavLinkBlock
                   title="Say hello"
@@ -30,6 +31,7 @@ const FooterSection = () => {
                   ]}
                 />
                 <FooterNavLinkBlock
+                  className="mt-4"
                   title="Call"
                   links={[
                     {
@@ -93,6 +95,17 @@ const FooterSection = () => {
               />
             </div>
           </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="flex gap-2 justify-between items-center">
+          <p className="font-bold text-[24px]">BESNIK</p>
+
+          <p className="text-white/50 dark:text-black/50">© devlop.me 2022</p>
+
+          <Link href="/privacy" className="text-white/50 dark:text-black/50">
+            PRIVACY - TERMS
+          </Link>
         </div>
       </div>
     </footer>

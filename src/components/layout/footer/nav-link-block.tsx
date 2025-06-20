@@ -9,7 +9,7 @@ type FooterNavLinkBlockProps = {
 const FooterNavLinkBlock = ({ title, links, ...props }: FooterNavLinkBlockProps) => {
   return (
     <div {...props}>
-      <h3 className="mb-4">{title}</h3>
+      <h3 className="mb-2 text-white/40 dark:text-black/40">{title}</h3>
       <ul className="flex flex-col">
         {links.map(link => {
           const type = link.type || 'link'
@@ -26,7 +26,10 @@ const FooterNavLinkBlock = ({ title, links, ...props }: FooterNavLinkBlockProps)
 
           return (
             <li key={link.href}>
-              <Link href={url} className="uppercase hover:text-primary transition-colors">
+              <Link
+                href={url}
+                className="uppercase font-normal hover:text-primary transition-colors"
+              >
                 {link.text}
               </Link>
             </li>

@@ -15,7 +15,7 @@ const PageHeader = () => {
   return (
     <header className="px-mw">
       <nav className="flex items-center px-8 py-2 min-h-[100px]">
-        <BrandLogo />
+        <BrandLogo className="text-[34px] font-extrabold hover" />
 
         <ul className="ml-auto flex gap-4">
           {links.map(link => (
