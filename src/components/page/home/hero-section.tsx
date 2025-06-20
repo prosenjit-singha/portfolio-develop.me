@@ -21,7 +21,7 @@ const socialLinks = [
 
 const HomePageHeroSection = () => {
   return (
-    <section className="px-mw relative lg:min-h-[calc(100vh-10rem)] flex items-center">
+    <section className="px-mw relative lg:min-h-[calc(100vh-15rem)] flex items-center">
       <Image
         src="/assets/images/hero-bg.png"
         alt="Hero Background"
@@ -31,23 +31,23 @@ const HomePageHeroSection = () => {
       />
       <div className="px-8 flex lg:flex-col lg:gap-12 relative">
         {/* Heading */}
-        <div className="lg:col-span-12">
-          <p className="text-[70px] font-bold flex gap-4 items-start ">
+        <h1 className="lg:col-span-12">
+          <span className="text-[70px] font-bold flex gap-4 items-start ">
             Trusted{' '}
             <span className="relative flex mb-4 px-4 text-white dark:text-black ">
               Partner
               <span className="absolute top-0 left-0 h-[calc(100%-10px)] w-full z-[-10] bg-black  dark:bg-white rounded-lg" />
             </span>
             for
-          </p>
-          <p className="flex gap-4 text-[70px] font-bold ">
+          </span>
+          <span className="flex gap-4 text-[70px] font-bold ">
             <span>Your Website</span>
             <span className="bg-black text-white dark:bg-white dark:text-black rounded-lg px-4 flex items-center">
               Develop
             </span>
             .
-          </p>
-        </div>
+          </span>
+        </h1>
         <div className="flex lg:gap-12">
           {/* Contact Info */}
           <div className="flex gap-y-4 flex-col lg:-rotate-90">
