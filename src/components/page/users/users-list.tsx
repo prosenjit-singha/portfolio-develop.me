@@ -1,17 +1,16 @@
 'use client'
-
 import React from 'react'
 import { useInfinityUserList } from '@/hooks/api/user.hook'
 import { Skeleton } from '@/components/ui/skeleton'
 import Image from 'next/image'
 import { IconButton } from '@/components/ui/button'
 import { MapPinIcon } from 'lucide-react'
+import { motion } from 'motion/react'
 
 const SIZE = 10
 
 const UsersList = () => {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isFetching } = useInfinityUserList()
-
   const observerRef = React.useRef<HTMLDivElement>(null)
 
   // Setup intersection observer
@@ -38,8 +37,12 @@ const UsersList = () => {
       {data?.pages?.map((page, index) => {
         return (
           <React.Fragment key={index}>
-            {page.users.map(user => (
-              <li
+            {page.users.map((user, j) => (
+              <motion.li
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.25, delay: j * 0.2 }}
+                exit={{ opacity: 0, y: -50 }}
                 key={user.id}
                 className="border rounded-lg p-4 border-border flex gap-2 justify-between items-center"
               >
@@ -64,7 +67,7 @@ const UsersList = () => {
                     <MapPinIcon />
                   </IconButton>
                 </div>
-              </li>
+              </motion.li>
             ))}
           </React.Fragment>
         )

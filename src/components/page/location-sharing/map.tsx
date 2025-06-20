@@ -1,12 +1,15 @@
 'use client'
 
-import React from 'react'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import React, { useEffect, useState } from 'react'
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { useSignalR } from '@/hooks/use-signalr'
+import { LocateFixedIcon } from 'lucide-react'
+import { Bounce, toast } from 'react-toastify'
+import { useTheme } from 'next-themes'
 
-const temp_position = [51.505, -0.09] as L.LatLngTuple
+const defaultPosition: [number, number] = [51.505, -0.09]
 
 const icon = new L.Icon({
   iconUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png',
@@ -14,44 +17,104 @@ const icon = new L.Icon({
   iconAnchor: [12, 41],
 })
 
-// const defaultCenter: LatLngTuple = [38.9072, -77.0369]
-// const defaultZoom = 8
-// const disneyWorldLatLng: LatLngTuple = [28.3852, -81.5639]
-// const disneyLandLatLng: LatLngTuple = [33.8121, -117.919]
+type Location = {
+  lat: number
+  lon: number
+  userName: string
+}
+
+const MapMover = ({ location }: { location: Location | null }) => {
+  const map = useMap()
+
+  useEffect(() => {
+    if (location) {
+      map.flyTo([location.lat, location.lon], 14, { duration: 2 })
+    }
+  }, [location, map])
+
+  return null
+}
 
 const ViewLocationOnMap = () => {
-  const [mounted, setMounted] = React.useState(false)
-  //   const [position, setPosition] = React.useState<[number, number]>([23.8103, 90.4125])
-  //   const [userName, setUserName] = React.useState('Unknown')
+  const [location, setLocation] = useState<Location | null>(null)
+  const { connection } = useSignalR()
+  const { theme } = useTheme()
 
-  useSignalR((data: { userName: string; lat: string; lon: string }) => {
-    console.log('Received:', data)
-    //   setUserName(data.userName)
-    //   setPosition([Number(data.lat), Number(data.lon)])
-  })
+  useEffect(() => {
+    connection?.on('ReceiveLatLon', (data: { userName: string; lat: string; lon: string }) => {
+      console.log('New location received', data)
+      toast.info(`New location received from ${data.userName}`, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: theme,
+        transition: Bounce,
+      })
+      setLocation({
+        lat: parseFloat(data.lat),
+        lon: parseFloat(data.lon),
+        userName: data.userName,
+      })
+    })
+  }, [connection])
 
-  React.useEffect(() => {
-    setMounted(true)
-  }, [])
+  const center: [number, number] = location ? [location.lat, location.lon] : defaultPosition
 
-  if (!mounted) return null
+  const handlePinMyLocation = () => {
+    if (!navigator.geolocation) {
+      alert('Geolocation is not supported by your browser')
+      return
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const { latitude, longitude } = position.coords
+        setLocation({
+          lat: latitude,
+          lon: longitude,
+          userName: 'You',
+        })
+      },
+      error => {
+        console.error('Geolocation error:', error)
+        alert('Failed to get location')
+      }
+    )
+  }
 
   return (
-    <div className="min-h-[300px] rounded-lg overflow-hidden ">
+    <div className="min-h-[300px] rounded-lg overflow-hidden">
       <MapContainer
-        center={temp_position}
-        className="min-h-[400px] h-full"
-        style={{ borderRadius: '1rem' }}
+        key={`${location?.lat}-${location?.lon}`}
+        center={center}
         zoom={13}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
+        className="min-h-[400px] h-full relative"
+        style={{ borderRadius: '1rem' }}
       >
+        <button
+          aria-label="Go to your location"
+          className="shadow-lg rounded-full p-2 absolute top-2 text-black bg-white right-2 z-[400] cursor-pointer hover:bg-white hover:text-black "
+          onClick={handlePinMyLocation}
+        >
+          <LocateFixedIcon />
+        </button>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={temp_position} icon={icon}>
-          <Popup>Unknown</Popup>
-        </Marker>
+
+        {location && (
+          <Marker position={[location.lat, location.lon]} icon={icon}>
+            <Popup>{location.userName}</Popup>
+          </Marker>
+        )}
+
+        <MapMover location={location} />
       </MapContainer>
     </div>
   )
