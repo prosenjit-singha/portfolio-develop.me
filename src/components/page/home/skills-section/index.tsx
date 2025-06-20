@@ -9,7 +9,7 @@ import { cn } from '@/libs/utils'
 const HomePageSkillsSection = () => {
   return (
     <section className="mx-mw p-8">
-      <div className="bg-black dark:bg-white p-8 rounded-[40px] text-white dark:text-black">
+      <div className="bold-section">
         <div className="flex items-stretch">
           <div className="border rounded-full self-stretch aspect-square w-10 flex items-center justify-center">
             <ArrowDownIcon />

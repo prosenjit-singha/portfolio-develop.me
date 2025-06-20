@@ -30,7 +30,7 @@ const MY_WORK_PROCESS = [
 const HomePageWorkProcess = () => {
   return (
     <section className="mx-mw px-8">
-      <div className="bg-black dark:bg-white p-8 lg:p-10 xl:p-12 rounded-[40px] text-white dark:text-black">
+      <div className="bold-section">
         <div className="relative mb-8">
           <div className="flex items-stretch lg:absolute lg:top-[25%] lg:left-0">
             <div className="border rounded-full self-stretch aspect-square w-10 flex items-center justify-center">

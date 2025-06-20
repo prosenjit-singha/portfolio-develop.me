@@ -6,7 +6,7 @@ const HomePageWorkingHistorySection = () => {
   return (
     <section className="px-mw relative mt-25">
       <Image
-        src="/assets/images/hero-bg.png"
+        src="/assets/images/neon-bg-2.png"
         alt="Hero Background"
         width={1000}
         height={1000}
@@ -45,33 +45,33 @@ const HomePageWorkingHistorySection = () => {
         </p>
 
         {/* Footer */}
-        <div className="flex gap-8 items-center">
+        <div className="flex gap-8 items-center mb-8">
           <h3 className="max-w-[15.5rem] font-bold text-[26px]">PREVIOUSLY WORKED ON</h3>
 
           <ul className="grid grid-cols-3 gap-x-8 grid-rows-2 mt-8 lg:ml-20">
             {/* awards */}
-            <li className="h-[90px] w-[280px] rounded-full bg-black flex items-center justify-center [&>div]:bg-white rotate-[11deg] translate-x-[30%]">
+            <li className="h-[90px] w-[280px] rounded-full bg-black flex dark:bg-white items-center justify-center [&>div]:bg-white dark:[&>div]:bg-black rotate-[11deg] translate-x-[30%]">
               <div className="w-full h-full mask-[url('/assets/svgs/companies/awards.svg')] mask-no-repeat mask-center mask-size-contain rotate-[-11.73deg]"></div>
             </li>
             {/* facebook */}
-            <li className="h-[90px] w-[280px] rounded-full border-black border-2 flex items-center justify-center [&>div]:bg-black translate-x-[50%] translate-y-[-20%]">
+            <li className="h-[90px] w-[280px] rounded-full border-black border-2 flex dark:border-white items-center justify-center [&>div]:bg-black dark:[&>div]:bg-white translate-x-[50%] translate-y-[-20%]">
               <div className="w-full h-full mask-[url('/assets/svgs/companies/facebook.svg')] mask-no-repeat mask-center mask-size-contain"></div>
             </li>
             {/* css design awards */}
-            <li className="h-[90px] w-[280px] rounded-full border-black border-2 flex items-center justify-center [&>div]:bg-black rotate-[11deg] translate-x-[40%]">
+            <li className="h-[90px] w-[280px] rounded-full border-black border-2 flex dark:border-white items-center justify-center [&>div]:bg-black dark:[&>div]:bg-white rotate-[11deg] translate-x-[40%]">
               <div className="w-full h-full mask-[url('/assets/svgs/companies/css-design-awards.svg')] mask-no-repeat mask-center mask-size-contain rotate-[-16.97deg]"></div>
             </li>
             {/* css winner */}
-            <li className="h-[90px] w-[280px] rounded-full border-black border-2 flex items-center justify-center [&>div]:bg-black">
+            <li className="h-[90px] w-[280px] rounded-full border-black border-2 flex dark:border-white items-center justify-center [&>div]:bg-black dark:[&>div]:bg-white">
               <div className="w-full h-full mask-[url('/assets/svgs/companies/css-winner.svg')] mask-no-repeat mask-center mask-size-contain"></div>
             </li>
             {/* thought works */}
-            <li className="h-[90px] w-[280px] rounded-full border-black border-2 flex items-center justify-center [&>div]:bg-black rotate-[-9.34deg] ">
+            <li className="h-[90px] w-[280px] rounded-full border-black border-2 flex dark:border-white items-center justify-center [&>div]:bg-black dark:[&>div]:bg-white rotate-[-9.34deg] ">
               <div className="w-full h-full mask-[url('/assets/svgs/companies/thought-works.svg')] mask-no-repeat mask-center mask-size-contain rotate-[9.34deg]"></div>
             </li>
 
             {/* autodesk */}
-            <li className="h-[90px] w-[280px] rounded-full border-black border-2 flex items-center justify-center [&>div]:bg-black translate-x-[-10%]">
+            <li className="h-[90px] w-[280px] rounded-full border-black border-2 flex dark:border-white items-center justify-center [&>div]:bg-black dark:[&>div]:bg-white translate-x-[-10%]">
               <div className="w-full h-full mask-[url('/assets/svgs/companies/autodesk.svg')] mask-no-repeat mask-center mask-size-contain"></div>
             </li>
           </ul>

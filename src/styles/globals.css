@@ -19,6 +19,9 @@
 }
 
 @layer utilities {
+  .bold-section {
+    @apply bg-black text-white dark:bg-white dark:text-black rounded-[52px] p-8;
+  }
   .px-mw {
     padding-inline: var(--max-w);
   }

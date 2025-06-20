@@ -7,7 +7,7 @@ const Input = ({ className, ...props }: InputProps) => {
   return (
     <input
       className={cn(
-        'w-full border-0 border-b border-white/40  focus-visible:outline-0 focus-visible:border-b-primary',
+        'w-full border-0 border-b border-border  focus-visible:outline-0 focus-visible:border-b-primary',
         className
       )}
       {...props}
@@ -21,7 +21,7 @@ const Textarea = ({ className, ...props }: TextareaProps) => {
   return (
     <textarea
       className={cn(
-        'w-full border-0 border-b border-white/40  focus-visible:outline-0 focus-visible:border-b-primary',
+        'w-full border-0 border-b border-border  focus-visible:outline-0 focus-visible:border-b-primary',
         className
       )}
       {...props}

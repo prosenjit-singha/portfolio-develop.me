@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 const FooterSection = () => {
   return (
-    <footer className="mx-mw px-8 pb-8 relative mt-12 ">
-      <div className="bg-black dark:bg-white p-8 rounded-[52px] text-white dark:text-black flex flex-col gap-5">
+    <footer className="mx-mw px-8 pb-8 relative">
+      <div className="bold-section flex flex-col gap-5">
         <div className="flex justify-between">
           <BrandLogo className="text-primary text-[34px]" />
 
@@ -103,7 +103,7 @@ const FooterSection = () => {
 
           <p className="text-white/50 dark:text-black/50">© devlop.me 2022</p>
 
-          <Link href="/privacy" className="text-white/50 dark:text-black/50">
+          <Link href="/privacy" className="text-white/50 dark:text-black/50 hover:text-primary">
             PRIVACY - TERMS
           </Link>
         </div>

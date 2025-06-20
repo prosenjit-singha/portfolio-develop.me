@@ -19,14 +19,14 @@ const SkillCard = <T extends React.ElementType = 'div'>({
   return (
     <Wrapper
       className={cn(
-        'rounded-[30px] p-6 flex flex-col gap-4 bg-white/7 max-w-[26.875rem] hover:shadow-primary/10 shadow-xl border border-transparent hover:border-primary/30 transition-[border-color,box-shadow,rotate] hover:rotate-0',
+        'rounded-[30px] p-6 flex flex-col gap-4 bg-white/7 max-w-[26.875rem] hover:shadow-primary/10 shadow-xl border border-border hover:border-primary/30 transition-[border-color,box-shadow,rotate] hover:rotate-0',
         className
       )}
       {...props}
     >
       <Icon size={60} />
       <h5 className="font-bold">{data.name}</h5>
-      <p className="line-clamp-3 text-white/70">{data.desc}</p>
+      <p className="line-clamp-3 text-white/70 dark:text-black/70">{data.desc}</p>
     </Wrapper>
   )
 }
