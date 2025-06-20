@@ -30,6 +30,7 @@ function SignalRProvider({ children }: { children: React.ReactNode }) {
           console.log('✅ SignalR connected')
         })
         .catch(err => {
+          toast.error('Failed to connect to SignalR!, Check console for more details')
           console.error('❌ SignalR connection failed:', err)
           setStatus('disconnected')
         })
