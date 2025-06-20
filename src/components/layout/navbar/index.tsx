@@ -1,5 +1,5 @@
 import BrandLogo from '@/components/shared/brand-logo'
-import Button from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { ArrowRightIcon } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
@@ -14,7 +14,7 @@ const links = [
 const PageHeader = () => {
   return (
     <header className="px-mw">
-      <nav className="flex items-center px-2 py-2 min-h-[100px]">
+      <nav className="flex items-center px-8 py-2 min-h-[100px]">
         <BrandLogo />
 
         <ul className="ml-auto flex gap-4">
