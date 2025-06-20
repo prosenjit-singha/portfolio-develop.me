@@ -56,10 +56,12 @@ To see the map & user list, you need to click the **Users/Location** link from t
 
 <!-- include link to /users -->
 
-[Users/Location](https://portfolio-develop-me.vercel.app/location-sharing)
+[Click On Users/Location](https://portfolio-develop-me.vercel.app/location-sharing)
 
 <!-- note warning -->
 
-> Note: SignalR Hub will not work because of the CORS policy. But it will work from the local development environment.
+## 📝 Tradeoffs
 
-> User List: Since https://tech-test.raintor.com/user/GetUsersList?take=10&skip=0 doesn't work, I am using faker.js to generate fake users which give us the same data as the API would return.
+- SignalR Hub will not work because of the CORS policy. But it will work from the local development environment.
+
+- User List: Since https://tech-test.raintor.com/user/GetUsersList?take=10&skip=0 doesn't work, I am using faker.js to generate fake users which give us the same data as the API would return.
