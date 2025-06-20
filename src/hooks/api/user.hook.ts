@@ -2,8 +2,6 @@ import { IUsersApiResponse } from '@/interfaces/user.interface'
 import { InfiniteData, useInfiniteQuery } from '@tanstack/react-query'
 import configs from '@/configs'
 
-console.log(configs)
-
 export const useInfinityUserList = () => {
   //   const queryClient = useQueryClient()
   const fetchUsers = async ({ skip = 0, take = 10 }: { skip: number; take: number }) => {

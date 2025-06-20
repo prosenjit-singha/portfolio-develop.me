@@ -3,28 +3,28 @@ import { cn } from '@/libs/utils'
 import { LucideIcon } from 'lucide-react'
 import Link from 'next/link'
 
-type CommonProps<T extends React.ElementType> = React.ComponentProps<T> & {
+type ButtonProps<T extends React.ElementType> = React.ComponentProps<T> & {
   startIcon?: LucideIcon
   as?: T | typeof Link
-  size?: 'small' | 'default' | 'large'
+  size?: 'sm' | 'default' | 'lg'
+  sz?: 'small' | 'default' | 'large'
 }
-
-type ButtonProps<T extends React.ElementType = 'button'> = React.ComponentProps<T> & CommonProps<T>
 
 export const Button = <T extends React.ElementType = 'button'>({
   className,
   startIcon,
   as = 'button',
   children,
+  // size = 'default' as "sm" | "default" | "lg",
   ...props
 }: ButtonProps<T>) => {
   const Icon = startIcon
 
-  const sizeClasses = {
-    small: '',
-    default: '',
-    large: '',
-  }
+  // const sizeClasses = {
+  //   sm: '',
+  //   default: 'text-sm',
+  //   lg: '',
+  // }
 
   const Wrapper = as
 
@@ -32,17 +32,17 @@ export const Button = <T extends React.ElementType = 'button'>({
     <Wrapper
       {...props}
       className={cn(
-        'flex items-center border rounded-full py-2 hover:cursor-pointer hover:border-primary/50 hover:text-primary transition-colors',
-        sizeClasses[props.size],
+        'flex items-center border rounded-full py-1 lg:py-2 hover:cursor-pointer hover:border-primary/50 hover:text-primary transition-colors text-xs',
+        // sizeClasses[size],
         className
       )}
     >
       {Icon && (
-        <span className="border rounded-full p-1 h-9.5 w-9.5 flex justify-center items-center">
+        <span className="border rounded-full p-1 lg:h-9.5 lg:w-9.5 flex justify-center items-center">
           {<Icon size={20} />}
         </span>
       )}
-      <span className="inline-block mx-3">{children}</span>
+      <span className="inline-block mx-2">{children}</span>
     </Wrapper>
   )
 }
@@ -64,7 +64,7 @@ export const IconButton = <T extends React.ElementType = 'button'>({
 
   const sizeClasses = {
     small: 'size-[32px] p-1.5',
-    default: 'size-[42px]',
+    default: 'size-[40px]',
     large: 'size-[52px]',
   }
 

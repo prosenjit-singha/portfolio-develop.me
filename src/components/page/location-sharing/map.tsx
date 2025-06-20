@@ -42,7 +42,6 @@ const ViewLocationOnMap = () => {
 
   useEffect(() => {
     connection?.on('ReceiveLatLon', (data: { userName: string; lat: string; lon: string }) => {
-      console.log('New location received', data)
       toast.info(`New location received from ${data.userName}`, {
         position: 'top-right',
         autoClose: 5000,

@@ -5,12 +5,12 @@ import { MY_SKILLS } from '@/constants/skills.const'
 import SkillCard from './skill-card'
 import { isOddNumber } from '@/libs/number'
 import { cn } from '@/libs/utils'
-
+import Marquee from 'react-fast-marquee'
 const HomePageSkillsSection = () => {
   return (
-    <section className="mx-mw p-8">
-      <div className="bold-section">
-        <div className="flex items-stretch">
+    <section className="mx-mw mt-10">
+      <div className="bold-section space-mx !p-0">
+        <div className="flex items-stretch  p-8 lg:p-12">
           <div className="border rounded-full self-stretch aspect-square w-10 flex items-center justify-center">
             <ArrowDownIcon />
           </div>
@@ -19,10 +19,8 @@ const HomePageSkillsSection = () => {
           </div>
         </div>
 
-        <div className="flex items-end justify-between gap-8 mt-8">
-          <h1 className="text-[58px] font-bold max-w-[516px] mb-auto">
-            My Extensive List of Skills
-          </h1>
+        <div className="flex flex-col lg:flex-row items-end justify-between gap-8 p-8 lg:p-12">
+          <h1 className="heading-1 font-bold max-w-[516px] mb-auto">My Extensive List of Skills</h1>
           <div className="flex flex-col gap-4 items-end">
             <h2 className="text-right max-w-[510px] text-[1.125rem]">
               Building the worlds best marketing Your trusted partner for strategy, design, and dev.
@@ -40,20 +38,22 @@ const HomePageSkillsSection = () => {
         </div>
 
         {/* Skill Carousal Section */}
-        <ul className="flex gap-4 overflow-x-auto py-10">
-          {MY_SKILLS.map((skill, index) => {
-            const isOdd = isOddNumber(index)
-            return (
-              <li key={index}>
-                <SkillCard
-                  className={cn(isOdd ? 'rotate-6' : '')}
-                  data={skill}
-                  key={index}
-                  as="div"
-                />
-              </li>
-            )
-          })}
+        <ul className="">
+          <Marquee className="flex gap-4 lg:gap-8 overflow-x-auto py-10">
+            {MY_SKILLS.map((skill, index) => {
+              const isOdd = isOddNumber(index)
+              return (
+                <li key={index}>
+                  <SkillCard
+                    className={cn(isOdd ? 'rotate-6' : '')}
+                    data={skill}
+                    key={index}
+                    as="div"
+                  />
+                </li>
+              )
+            })}
+          </Marquee>
         </ul>
       </div>
     </section>

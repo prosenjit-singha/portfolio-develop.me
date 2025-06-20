@@ -48,6 +48,21 @@
   .mx-mw {
     margin-inline: var(--max-w);
   }
+  .space-px {
+    @apply px-3 lg:px-8 xl:px-12;
+  }
+  .space-py {
+    @apply py-3 lg:py-8 xl:py-12;
+  }
+  .space-mx {
+    @apply mx-3 lg:mx-8 xl:mx-12;
+  }
+  .heading-1 {
+    @apply text-[clamp(20px,5vw,58px)] font-bold;
+  }
+  .heading-2 {
+    @apply text-[clamp(16px,5vw,30px)];
+  }
 }
 
 body {

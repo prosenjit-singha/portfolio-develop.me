@@ -12,7 +12,7 @@ const HomePageWorkingHistorySection = () => {
         height={1000}
         className="absolute -top-50 left-0 w-full h-svh -z-10"
       />
-      <div className="flex flex-col px-8">
+      <div className="flex flex-col space-px">
         <div className="flex items-stretch ml-auto mb-8">
           <div className="border rounded-full self-stretch aspect-square w-10 flex items-center justify-center">
             <ArrowDownIcon />
