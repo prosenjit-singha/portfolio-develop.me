@@ -1,43 +1,45 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* light theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --max-width-limit: 1410px;
   --max-w: max(0rem, calc((100vw - var(--max-width-limit)) / 2));
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #c5ff41;
+  --primary-foreground: #e2e2e2;
+  --muted-foreground: #ffffff88;
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ededed;
+  --border: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-sporting-regular);
   --font-mono: var(--font-geist-mono);
-  --color-primary: #c5ff41;
-  --color-primary-foreground: #e2e2e2;
-  --color-muted-foreground: #00000083;
-  --color-border: rgba(0, 0, 0, 0.08);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
 }
 
 @layer utilities {
   .bold-section {
-    @apply bg-black text-white dark:bg-white dark:text-black rounded-[52px] p-8;
+    @apply bg-black dark:bg-white text-white dark:text-black rounded-[52px] p-8;
   }
   .px-mw {
     padding-inline: var(--max-w);
   }
   .mx-mw {
     margin-inline: var(--max-w);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --color-primary: #c5ff41;
-    --color-primary-foreground: #e2e2e2;
-    --color-muted-foreground: #ffffff88;
-    --color-border: rgba(255, 255, 255, 0.08);
   }
 }
 

@@ -64,8 +64,8 @@ export const IconButton = <T extends React.ElementType = 'button'>({
 
   const sizeClasses = {
     small: 'py-1',
-    default: '',
-    large: '',
+    default: 'size-[42px]',
+    large: 'size-[52px]',
   }
 
   return (

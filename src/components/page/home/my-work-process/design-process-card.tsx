@@ -16,7 +16,7 @@ const DesignProcessCard = ({ className, data, ...props }: DesignProcessCardProps
   return (
     <li
       className={cn(
-        'rounded-[30px] p-6 flex flex-col gap-4 bg-white/7 hover:shadow-primary/10 shadow-xl border border-border hover:border-primary/30 transition-[border-color,box-shadow,rotate] hover:rotate-0 ',
+        'rounded-[30px] p-6 flex flex-col gap-4 bg-white/7 hover:shadow-primary/10 shadow-xl border dark:border-black/8 border-white/8  hover:border-primary/30 transition-[border-color,box-shadow,rotate] hover:rotate-0 ',
         className,
         data.className
       )}

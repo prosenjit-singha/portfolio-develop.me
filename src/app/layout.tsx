@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import { sportingGrotesque } from '@/helpers/fonts.helper'
 import PageHeader from '@/components/layout/navbar'
 import FooterSection from '@/components/layout/footer'
+import Providers from '@/components/providers'
 
 export const metadata: Metadata = {
   title: {
@@ -18,11 +19,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${sportingGrotesque.className} antialiased`}>
-        <PageHeader />
-        {children}
-        <FooterSection />
+        <Providers>
+          <PageHeader />
+          {children}
+          <FooterSection />
+        </Providers>
       </body>
     </html>
   )

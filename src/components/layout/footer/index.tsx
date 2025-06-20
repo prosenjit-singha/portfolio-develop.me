@@ -8,7 +8,7 @@ const FooterSection = () => {
     <footer className="mx-mw px-8 pb-8 relative">
       <div className="bold-section flex flex-col gap-5">
         <div className="flex justify-between">
-          <BrandLogo className="text-primary text-[34px]" />
+          <BrandLogo className="text-primary text-[34px] h-fit" />
 
           <div className="flex flex-col lg:w-[50%]">
             <h2 className="text-[64px] font-bold">As You Can</h2>

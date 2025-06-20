@@ -1,8 +1,9 @@
+import React from 'react'
 import BrandLogo from '@/components/shared/brand-logo'
+import ThemeTogglerButton from '@/components/shared/theme-toggler-button'
 import { Button } from '@/components/ui/button'
 import { ArrowRightIcon } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -24,6 +25,7 @@ const PageHeader = () => {
             </li>
           ))}
         </ul>
+        <ThemeTogglerButton className="ml-4" />
         <Button startIcon={ArrowRightIcon} className="ml-4">
           Start Project
         </Button>
